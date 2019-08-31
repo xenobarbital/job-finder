@@ -1,0 +1,19 @@
+{
+  "name": "job-finder",
+  "version": "0.0.1",
+  "description": "Skill evaluating task",
+  "scripts": {
+    "start": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xenobarbital",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.7.8"
+  },
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "eslint-plugin-angular": "^4.0.1",
+    "live-server": "^1.2.1"
+  }
+}

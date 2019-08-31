@@ -1,0 +1,101 @@
+angular.module('jobFinder')
+  .controller('JobListController', ['$scope', $scope => {
+    $scope.jobs = [
+      {
+        'id': 101,
+        'company': 'Space-X',
+        'logo': '',
+        'position': 'Rocket scientist',
+        'location': 'Hawthorne, California, U.S.',
+        'fulltime': true
+      },
+      {
+        'id': 102,
+        'company': 'DELL',
+        'logo': '',
+        'position': 'Senior software developer',
+        'location': 'Round Rock, Texas, U.S.',
+        'fulltime': true
+      },
+      {
+        'id': 103,
+        'company': 'IBM',
+        'logo': '',
+        'position': 'System administrator',
+        'location': 'Armonk, New York, U.S.',
+        'fulltime': true
+      },
+      {
+        'id': 104,
+        'company': 'McDonalds',
+        'logo': '',
+        'position': 'Manager',
+        'location': 'North Decatur, Georgia, U.S.',
+        'fulltime': true
+      },
+      {
+        'id': 105,
+        'company': 'Lenovo',
+        'logo': '',
+        'position': 'Sales manager',
+        'location': 'Haidian District, Beijing, China',
+        'fulltime': true
+      },
+      {
+        'id': 106,
+        'company': 'Nvidia',
+        'logo': '',
+        'position': 'Junior architecture developer',
+        'location': 'Santa Clara, California, U.S.',
+        'fulltime': true
+      },
+      {
+        'id': 107,
+        'company': 'Intel',
+        'logo': '',
+        'position': 'Project manager',
+        'location': 'Santa Clara, California, U.S.',
+        'fulltime': true
+      },
+      {
+        'id': 108,
+        'company': 'General Electric',
+        'logo': '',
+        'position': 'Chief Technical Officer',
+        'location': 'Boston, Massachusetts, United States',
+        'fulltime': true
+      },
+      {
+        'id': 109,
+        'company': 'NASA',
+        'logo': '',
+        'position': 'Intern in JPL',
+        'location': '',
+        'fulltime': false
+      },
+      {
+        'id': 110,
+        'company': 'Aerojet Rocketdyne',
+        'logo': '',
+        'position': 'Senior Test Engineer',
+        'location': 'Sacramento, California, U.S.',
+        'fulltime': true
+      },
+      {
+        'id': 111,
+        'company': 'Blue Origin',
+        'logo': '',
+        'position': 'Junior Aerodynamics Engineer',
+        'location': 'Kent, Washington, U.S.',
+        'fulltime': true
+      },
+      {
+        'id': 112,
+        'company': 'Volkswagen',
+        'logo': '',
+        'position': 'Automated Welding Engineer',
+        'location': 'Wolfsburg, Germany',
+        'fulltime': true
+      }
+    ];
+  }]);

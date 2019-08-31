@@ -1,12 +1,21 @@
 {
   "env": {
-    "browser": true
+    "browser": true,
+    "es6": true
   },
   "plugins": ["angular"],
   "globals":{
       "Insert Global Here": true
   },
   "rules": {
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1,
+      },
+    ],
+    "quotes": ["error", "single"],
     "linebreak-style": [
       "error",
       "windows"
@@ -16,6 +25,20 @@
       "always"
     ],
     "no-console": "off",
-    "angular/di": [ "error", "$inject" ]
+    "no-empty": [
+      "error",
+      {
+        "allowEmptyCatch": true,
+      },
+    ],
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "after-used",
+        "vars": "all",
+        "ignoreRestSiblings": true,
+        "argsIgnorePattern": "^_",
+      },
+    ],
   }
 }

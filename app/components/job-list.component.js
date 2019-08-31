@@ -1,13 +1,6 @@
 angular.module('jobFinder').
   component('jobList', {
-    template:
-      '<ul>' +
-        '<li ng-repeat="job in $ctrl.jobs">' +
-          '<img alt="logo" title="{{ job.company }}" src="{{ job.logo }}" />' +
-          '<p>{{ job.position }}</p>' + 
-          '<p>{{ job.location }}</p>' + 
-        '</li>' +
-      '</ul>',
+    templateUrl: '/app/templates/job-list.template.html',
     controller: function JobListController() {
       this.jobs = [
         {

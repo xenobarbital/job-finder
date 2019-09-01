@@ -1,1 +1,1 @@
-angular.module('jobFinder', []);
+angular.module('jobFinder', ['jobList']);

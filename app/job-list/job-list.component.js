@@ -1,6 +1,6 @@
-angular.module('jobFinder').
+angular.module('jobList').
   component('jobList', {
-    templateUrl: '/app/templates/job-list.template.html',
+    templateUrl: '/app/job-list/job-list.template.html',
     controller: function JobListController() {
       this.jobs = [
         {

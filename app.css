@@ -1,0 +1,17 @@
+body {
+  padding-top: 20px;
+}
+li {
+  margin: 15px 0px 15px 0px;
+}
+
+.logo-cont {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.logo {
+  max-width: 100px;
+  height: auto;
+}

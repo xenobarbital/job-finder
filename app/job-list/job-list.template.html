@@ -1,7 +1,37 @@
-<ul>
-  <li ng-repeat="job in $ctrl.jobs">
-    <img alt="logo" title="{{ job.company }}" src="{{ job.logo }}" />
-    <p>{{ job.position }}</p>
-    <p>{{ job.location }}</p>
-  </li>
-</ul>
+<div class="container-fluid">
+  <div class="col-md-12 row">
+    Sort by:
+    <select ng-model="$ctrl.orderProp">
+      <option value="position">Position</option>
+      <option value="company">Employer</option>
+      <option value="posted">Newest</option>
+      <option value="deadline">Deadline</option>
+    </select>
+    Search: <input ng-model="$ctrl.query" />
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+      <h2>Sidebar here</h2>
+      <input ng-model="$ctrl.employmentType" type="radio" name="type" value=""> All<br>
+      <input ng-model="$ctrl.employmentType" type="radio" name="type" value="Full time"> Full time<br>
+      <input ng-model="$ctrl.employmentType" type="radio" name="type" value="Part time"> Part time<br>
+      <input ng-model="$ctrl.employmentType" type="radio" name="type" value="Contractor"> Contractor<br>
+      <input ng-model="$ctrl.employmentType" type="radio" name="type" value="Intern"> Intern<br>
+    </div>
+    <ul>
+      <li class="row" ng-repeat="job in $ctrl.jobs | filter:$ctrl.query | filter:{type: $ctrl.employmentType} | orderBy:$ctrl.orderProp">
+        <div class="logo-cont">
+          <img class="logo" alt="logo" title="{{ job.company }}" src="{{ job.logo }}" />
+        </div>
+        <div>
+          <p>{{ job.position }}</p>
+          <p>{{ job.location }}</p>
+          <p>{{ job.type }}</p>
+          <p>Posted: {{ job.posted | date }}</p>
+          <p>Deadline: {{ job.deadline | date }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

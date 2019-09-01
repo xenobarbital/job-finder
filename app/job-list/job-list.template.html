@@ -26,7 +26,7 @@
     </div>
     <div class="list col-md-9">
       <ul class="col-md-11">
-        <li class="row listitem" ng-repeat="job in $ctrl.jobs | filter:$ctrl.query | filter:{type: $ctrl.employmentType} | orderBy:$ctrl.orderProp">
+        <li class="row" ng-repeat="job in $ctrl.jobs | filter:$ctrl.query | filter:{type: $ctrl.employmentType} | orderBy:$ctrl.orderProp">
           <div class="logo-cont">
             <img class="logo" alt="logo" title="{{ job.company }}" src="{{ job.logo }}" />
           </div>
@@ -40,6 +40,10 @@
               <img title="Posted" src="/app/img/calendar.svg" class="icon"><span>{{ job.posted | date }}</span>
               <img title="Deadline" src="/app/img/alert-triangle.svg" class="icon icon2"><span>{{ job.deadline | date }}</span>
             </div>
+          </div>
+          <div class="buttoncont">
+            <button type="button" class="btn btn-primary">Bookmark</button>
+            <button type="button" class="btn btn-success">Apply</button>
           </div>
         </li>
       </ul>

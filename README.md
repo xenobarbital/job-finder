@@ -9,6 +9,6 @@ Installed nodejs runtime, git version control (optional)
 ## Running the application
 
 After git-cloning (or unpacking downloaded zip archive) perform:
-`cd job-finder`
-`npm install`
+`cd job-finder`,
+`npm install`,
 `npm start`

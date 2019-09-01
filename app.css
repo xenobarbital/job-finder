@@ -63,6 +63,9 @@ select {
 .customrow2 {
   margin-left: 0px;
   margin-right: 0px;
+  width: 300px;
+  display: flex;
+  align-items: center;
 }
 
 .listitem {
@@ -78,4 +81,8 @@ select {
 .navbar {
   margin-bottom: 15px;
   padding-left: 15px;
+}
+
+.custom-select {
+  width: 200px;
 }

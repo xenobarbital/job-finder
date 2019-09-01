@@ -1,41 +1,48 @@
 <div class="container">
-  <div class="col-md-12 row">
-    Sort by:
-    <select ng-model="$ctrl.orderProp">
-      <option value="position">Position</option>
-      <option value="company">Employer</option>
-      <option value="posted">Newest</option>
-      <option value="deadline">Deadline</option>
-    </select>
-    Search: <input ng-model="$ctrl.query" />
-  </div>
+  <nav class="navbar navbar-light bg-light">
+    <div class="row customrow2">
+      Sort by:
+      <select ng-model="$ctrl.orderProp">
+        <option value="position">Position</option>
+        <option value="company">Employer</option>
+        <option value="posted">Newest</option>
+        <option value="deadline">Deadline</option>
+      </select>
+    </div>
+    <form class="form-inline">
+      <input  ng-model="$ctrl.query" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    </form>
+  </nav>
   <div class="row">
     <div class="col-md-3">
-      <!--Sidebar content-->
-      <h2>Employment type</h2>
-      <input ng-model="$ctrl.employmentType" type="radio" name="type" value=""> All<br>
-      <input ng-model="$ctrl.employmentType" type="radio" name="type" value="Full time"> Full time<br>
-      <input ng-model="$ctrl.employmentType" type="radio" name="type" value="Part time"> Part time<br>
-      <input ng-model="$ctrl.employmentType" type="radio" name="type" value="Contractor"> Contractor<br>
-      <input ng-model="$ctrl.employmentType" type="radio" name="type" value="Intern"> Intern<br>
+      <div class="sidebox">
+        <h2>Employment type</h2>
+        <input ng-model="$ctrl.employmentType" type="radio" name="type" value=""> All<br>
+        <input ng-model="$ctrl.employmentType" type="radio" name="type" value="Full time"> Full time<br>
+        <input ng-model="$ctrl.employmentType" type="radio" name="type" value="Part time"> Part time<br>
+        <input ng-model="$ctrl.employmentType" type="radio" name="type" value="Contractor"> Contractor<br>
+        <input ng-model="$ctrl.employmentType" type="radio" name="type" value="Intern"> Intern<br>
+      </div>
     </div>
-    <ul class="col-md-8">
-      <li class="row listitem" ng-repeat="job in $ctrl.jobs | filter:$ctrl.query | filter:{type: $ctrl.employmentType} | orderBy:$ctrl.orderProp">
-        <div class="logo-cont">
-          <img class="logo" alt="logo" title="{{ job.company }}" src="{{ job.logo }}" />
-        </div>
-        <div>
-          <h2>{{ job.position }}</h2>
-          <div class="row customrow">
-            <img title="Location" src="/app/img/map-pin.svg" class="icon"><span>{{ job.location }}</span>
-            <img title="Employment type" src="/app/img/clock.svg" class="icon icon2"><span>{{ job.type }}</span>
+    <div class="list col-md-9">
+      <ul class="col-md-11">
+        <li class="row listitem" ng-repeat="job in $ctrl.jobs | filter:$ctrl.query | filter:{type: $ctrl.employmentType} | orderBy:$ctrl.orderProp">
+          <div class="logo-cont">
+            <img class="logo" alt="logo" title="{{ job.company }}" src="{{ job.logo }}" />
           </div>
-          <div class="row customrow">
-            <img title="Posted" src="/app/img/calendar.svg" class="icon"><span>Posted: {{ job.posted | date }}</span>
-            <img title="Deadline" src="/app/img/alert-triangle.svg" class="icon icon2"><span>Deadline: {{ job.deadline | date }}</span>
+          <div>
+            <h2>{{ job.position }}</h2>
+            <div class="row customrow">
+              <img title="Location" src="/app/img/map-pin.svg" class="icon"><span>{{ job.location }}</span>
+              <img title="Employment type" src="/app/img/clock.svg" class="icon icon2"><span>{{ job.type }}</span>
+            </div>
+            <div class="row customrow">
+              <img title="Posted" src="/app/img/calendar.svg" class="icon"><span>{{ job.posted | date }}</span>
+              <img title="Deadline" src="/app/img/alert-triangle.svg" class="icon icon2"><span>{{ job.deadline | date }}</span>
+            </div>
           </div>
-        </div>
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

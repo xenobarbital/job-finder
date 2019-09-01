@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
   <div class="col-md-12 row">
     Sort by:
     <select ng-model="$ctrl.orderProp">
@@ -10,26 +10,30 @@
     Search: <input ng-model="$ctrl.query" />
   </div>
   <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-3">
       <!--Sidebar content-->
-      <h2>Sidebar here</h2>
+      <h2>Employment type</h2>
       <input ng-model="$ctrl.employmentType" type="radio" name="type" value=""> All<br>
       <input ng-model="$ctrl.employmentType" type="radio" name="type" value="Full time"> Full time<br>
       <input ng-model="$ctrl.employmentType" type="radio" name="type" value="Part time"> Part time<br>
       <input ng-model="$ctrl.employmentType" type="radio" name="type" value="Contractor"> Contractor<br>
       <input ng-model="$ctrl.employmentType" type="radio" name="type" value="Intern"> Intern<br>
     </div>
-    <ul>
-      <li class="row" ng-repeat="job in $ctrl.jobs | filter:$ctrl.query | filter:{type: $ctrl.employmentType} | orderBy:$ctrl.orderProp">
+    <ul class="col-md-8">
+      <li class="row listitem" ng-repeat="job in $ctrl.jobs | filter:$ctrl.query | filter:{type: $ctrl.employmentType} | orderBy:$ctrl.orderProp">
         <div class="logo-cont">
           <img class="logo" alt="logo" title="{{ job.company }}" src="{{ job.logo }}" />
         </div>
         <div>
-          <p>{{ job.position }}</p>
-          <p>{{ job.location }}</p>
-          <p>{{ job.type }}</p>
-          <p>Posted: {{ job.posted | date }}</p>
-          <p>Deadline: {{ job.deadline | date }}</p>
+          <h2>{{ job.position }}</h2>
+          <div class="row customrow">
+            <img title="Location" src="/app/img/map-pin.svg" class="icon"><span>{{ job.location }}</span>
+            <img title="Employment type" src="/app/img/clock.svg" class="icon icon2"><span>{{ job.type }}</span>
+          </div>
+          <div class="row customrow">
+            <img title="Posted" src="/app/img/calendar.svg" class="icon"><span>Posted: {{ job.posted | date }}</span>
+            <img title="Deadline" src="/app/img/alert-triangle.svg" class="icon icon2"><span>Deadline: {{ job.deadline | date }}</span>
+          </div>
         </div>
       </li>
     </ul>

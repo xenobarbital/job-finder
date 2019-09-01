@@ -1,6 +1,7 @@
 body {
   padding-top: 20px;
 }
+
 li {
   margin: 15px 0px 15px 0px;
 }
@@ -9,9 +10,34 @@ li {
   width: 100px;
   height: 100px;
   margin-right: 10px;
+  border: solid 1px #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {
-  max-width: 100px;
+  max-width: 80px;
   height: auto;
+}
+
+.icon {
+  width: 15px;
+  margin-right: 5px;
+}
+
+.icon2 {
+  margin-left: 15px;
+}
+
+.customrow {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 5px;
+  color: #aaa;
+}
+
+.listitem {
+  padding: 10px;
+  border: solid 1px #eee;
 }
